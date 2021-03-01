@@ -19,8 +19,10 @@
 		<slf4j.version>1.7.25</slf4j.version>
 		<logback.version>1.2.3</logback.version>
 		<spring.boot.version>2.2.6.RELEASE</spring.boot.version>
+		<jackson.fasterxml.version>2.12.1</jackson.fasterxml.version>
 		<cucumber.version>6.8.1</cucumber.version>
 		<awaitility.version>4.0.3</awaitility.version>
+		<wiremock.version>2.27.2</wiremock.version>
 	</properties>
 
 	<dependencyManagement>
@@ -53,6 +55,13 @@
 				<scope>import</scope>
 			</dependency>
 			<dependency>
+				<groupId>com.fasterxml.jackson</groupId>
+				<artifactId>jackson-bom</artifactId>
+				<version>${jackson.fasterxml.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
 				<groupId>io.cucumber</groupId>
 				<artifactId>cucumber-jvm</artifactId>
 				<version>${cucumber.version}</version>
@@ -64,6 +73,26 @@
 				<artifactId>awaitility</artifactId>
 				<version>${awaitility.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.github.tomakehurst</groupId>
+				<artifactId>wiremock</artifactId>
+				<version>${wiremock.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.tomakehurst</groupId>
+				<artifactId>wiremock-standalone</artifactId>
+				<version>${wiremock.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.tomakehurst</groupId>
+				<artifactId>wiremock-jre8</artifactId>
+				<version>${wiremock.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.tomakehurst</groupId>
+				<artifactId>wiremock-jre8-standalone</artifactId>
+				<version>${wiremock.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	
@@ -71,5 +100,4 @@
 		<module>test-cucumber</module>
 		<module>test-spring</module>
 	</modules>
-	
 </project>
