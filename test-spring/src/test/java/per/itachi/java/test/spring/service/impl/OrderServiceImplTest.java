@@ -4,7 +4,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import per.itachi.java.test.spring.TestCaseConfiguration;
@@ -14,6 +16,9 @@ import per.itachi.java.test.spring.TestCaseConfiguration;
 public class OrderServiceImplTest {
 	
 	private final Logger logger = LoggerFactory.getLogger(OrderServiceImplTest.class);
+
+	@Autowired
+	private TestRestTemplate testRestTemplate;
 	
 	@Test
 	public void test() {
